@@ -17,6 +17,8 @@
     - [Image Post-processing](#image-post-processing)
   - [Comparison of Results](#comparison-of-results)
     - [Enhancement Effect](#enhancement-effect)
+      - [Improvement Effect](#improvement-effect)
+      - [Overall Effect](#overall-effect)
     - [Model Size & Reasoning Speed](#model-size--reasoning-speed)
 
 ## Overview
@@ -118,11 +120,20 @@ Gamma transformation is mainly used for image correction, to correct images with
 
 ## Comparison of Results
 ### Enhancement Effect
-||Overexpose|Noise|Loss of Details|
+#### Improvement Effect
+||Noise|Loss of Details|Higher Brightness|
 |:-:|:-:|:-:|:-:|
 |Original|![](imgs/02.jpg)|![](imgs/01.jpg)|![](imgs/05.jpg)|
 |Enhanced|![](imgs/02-ori.jpg)|![](imgs/ori.jpg)|![](imgs/05-ori.jpg)|
 |Improved|![](imgs/02-res.jpg)|![](imgs/res.jpg)|![](imgs/05-res.jpg)|
+
+#### Overall Effect
+|Original Images|Results|
+|:-:|:-:|
+|![](imgs/06.jpg)|![](imgs/06-res.jpg)|
+|![](imgs/30.jpg)|![](imgs/30-res.jpg)|
+|![](imgs/20.jpg)|![](imgs/20-res.jpg)|
+
 ### Model Size & Reasoning Speed
 - Model Size: The file size of the model was compressed from 312KB ([official pre-train model file](https://github.com/Li-Chongyi/Zero-DCE/tree/ace3d87c5bb65327535d3ece06176bc160dea1eb/Zero-DCE_code/snapshots)) to 97KB (`src/snapshots/*.pth`).
 - Reasoning Speed: Here is a comparison of the enhancing speed of the 9 pictures in `src/test_data/LIME` between the original model and the improved model. It can be seen from the results that the improved model has an optimization ratio of 10-35%.
