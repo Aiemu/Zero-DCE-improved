@@ -35,7 +35,7 @@ def lowlight(image_path):
 	data_lowlight = data_lowlight.cuda().unsqueeze(0)
 
 	DCE_net = model.enhance_net_nopool().cuda()
-	DCE_net.load_state_dict(torch.load('snapshots\\Epoch5.pth'))
+	DCE_net.load_state_dict(torch.load('snapshots/pre-train.pth'))
 	start = time.time()
 	_,enhanced_image,_ = DCE_net(data_lowlight)
 
@@ -43,8 +43,8 @@ def lowlight(image_path):
 	print(end_time)
 	image_path = image_path.replace('test_data','result')
 	result_path = image_path
-	if not os.path.exists(image_path.replace('\\'+image_path.split("\\")[-1],'')):
-		os.makedirs(image_path.replace('\\'+image_path.split("\\")[-1],''))
+	if not os.path.exists(image_path.replace('/'+image_path.split("/")[-1],'')):
+		os.makedirs(image_path.replace('/'+image_path.split("/")[-1],''))
 	torchvision.utils.save_image(enhanced_image, result_path)
 	enhanced_image = cv2.imread(result_path)
 	enhanced_image = gamma_trans(enhanced_image, 1.15)
@@ -53,12 +53,12 @@ def lowlight(image_path):
 if __name__ == '__main__':
 # test_images
 	with torch.no_grad():
-		filePath = 'data\\test_data\\'
+		filePath = 'data/test_data/'
 	
 		file_list = os.listdir(filePath)
 
 		for file_name in file_list:
-			test_list = glob.glob(filePath+file_name+"\\*") 
+			test_list = glob.glob(filePath+file_name+"/*") 
 			for image in test_list:
 				# image = image
 				print(image)
