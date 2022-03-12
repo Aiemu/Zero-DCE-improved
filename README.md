@@ -2,7 +2,6 @@
 
   - [Overview](#overview)
     - [Introduction](#introduction)
-    - [Division of Work](#division-of-work)
     - [Folder Structure](#folder-structure)
   - [Quick Start](#quick-start)
     - [Prerequisites](#prerequisites)
@@ -26,11 +25,6 @@
 This is the implementation of ***Zero-Reference Deep Curve Estimation for Low-Light Image Enhancement***, and the effect of this paper has reached the SOTA at that time. 
 
 Based on the method proposed in the paper and the open source code provided by the author, we have improved the effect of image enhancement under low light through model improvement and combined with traditional techniques, while reducing the size of the model to a certain extent and speeding up training and reasoning.
-
-### Division of Work
-- Fengyuan Tian: Paper reproduction and loss function adjustment.
-- Zihan Ning: Image post-processing and sorting out experimental results.
-- Zheng Zeng: Modifying the network and visualizing the training process.
 
 ### Folder Structure
     src
